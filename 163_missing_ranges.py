@@ -1,16 +1,20 @@
-class Solution:
-    def findMissingRanges(self, nums: int, lower: int, upper: int) -> str:
-        # Store output list of lists
+def findMissingRanges(nums: int, lower: int, upper: int) -> str:
+    
+    def missing_nums(nums, lower, upper):
+        """Return a list of the missing numbers"""
         missing = []
         
-        # We know what lower and upper are so iterate through lower:upper+1 and check if i is in nums. If not add to missing.
         for i in range(lower, upper + 1):
             if i not in nums:
                 missing.append(i)
         
-        # Iterate through missing
-        for idx, i in missing:
-            # Need to check if one consecutive digit or multiple
-            
-                # Recursive function? 
-                    # Base case returns i if i + 1 != next i iteration?
+        return missing 
+    
+    iter_nums = missing_nums(nums, lower, upper) # Missing numbers
+    count = iter_nums[-1] # Last value of missing numbers
+    output = []
+    
+    for num in iter_nums[::-1]:
+        
+
+print(findMissingRanges([0,1,3,50,75], 0, 99))
