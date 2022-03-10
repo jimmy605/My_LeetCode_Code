@@ -1,13 +1,12 @@
-def thirdMax(nums: list[int]) -> int:
-    if len(nums) == 1:
-        return nums[0]
+def thirdMax(nums):
+    # If len() == 1: return the max_number
+    # Iterate through it for O(n) and do conditional statements?
+    unique_nums = list(set(nums))
+    unique_nums.sort()
     
-    nums.sort(reverse=True)
+    if len(unique_nums) < 3:
+        return unique_nums[-1]
     
-    # max variables
-    max3 = 0
-    max2 = 0
-    max1 = nums[0]
-    
-    for num in nums[1:]:
-        
+    return unique_nums[-3]
+
+print(thirdMax([3,2,1]))
