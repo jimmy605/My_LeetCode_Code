@@ -1,20 +1,14 @@
 def findMissingRanges(nums: int, lower: int, upper: int) -> str:
     
-    def missing_nums(nums, lower, upper):
-        """Return a list of the missing numbers"""
-        missing = []
-        
-        for i in range(lower, upper + 1):
-            if i not in nums:
-                missing.append(i)
-        
-        return missing 
-    
-    iter_nums = missing_nums(nums, lower, upper) # Missing numbers
-    count = iter_nums[-1] # Last value of missing numbers
+    missing = [i for i in range(lower, upper + 1) if i not in nums]
     output = []
     
-    for num in iter_nums[::-1]:
-        
+    # Pointers
+    before = 0 
+    after = 0
+    
+    for idx, num in enumerate(missing):
+        # i is by itself
+        if idx == 0 and num[idx + 1] != 
 
 print(findMissingRanges([0,1,3,50,75], 0, 99))
