@@ -2,19 +2,19 @@ import math
 
 class Solution:
     def convertToTitle(self, columnNumber: int) -> str:
-        alphabet = {l + 1:v for l, v in enumerate('ABCDEFGHIJKLMNOPQRSTUVWXYZ')}
-        
+        alphabet = {l:v for l, v in enumerate('ABCDEFGHIJKLMNOPQRSTUVWXYZ')}
         output = ''
         
         while columnNumber > 0:
-            letter = columnNumber // 26
-            output += alphabet[letter]
+            columnNumber -= 1
             
-            columnNumber -= 26 * letter
+            columnNumber, i = divmod(columnNumber, 26)
+            output += alphabet[i]
         
-        return output
+        return output[::-1]
 
 test = Solution()
 print(test.convertToTitle(1))
 print(test.convertToTitle(28))
 print(test.convertToTitle(701))
+print(test.convertToTitle(2147483647))
