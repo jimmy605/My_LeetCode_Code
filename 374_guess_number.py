@@ -4,13 +4,5 @@
 # def guess(num: int) -> int:
 
 class Solution:
-    def guess(num: int) -> int:
-        return num 
-    
     def guessNumber(self, n: int) -> int:
-        # Find the mid point of n and allocate it to an index
-        mid = n // 2
-
-        # If guess == mid return 0
         
-        # Elif guess > guess
