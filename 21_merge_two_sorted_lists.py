@@ -3,31 +3,22 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+
+
 class Solution:
     def mergeTwoLists(self, list1, list2):
-        list3 = []
-        head1 = list1.head 
-        head2 = list2.head 
+        prehead = ListNode(-1)
         
-        while True:
-            
-            while head1 <= head2:
-                list3.append(head1)
-                if not head1.next:
-                    head1 = head1.next 
-                else:
-                    break 
-            
-            while head2 <= head1:
-                list3.append(head2)
-                if not head2.next:
-                    head2 = head2.next 
-                else:
-                    break 
-            
-            if head1 == None and head2 == None:
-                break
+        prev = prehead 
+        while list1 and list2:
+            if list1.val <= list2.val:
+                prev.next = list1
+                list1 = list1.next 
+            else:
+                prev.next = list2
+                list2 = list2.next
+            prev = prev.next
         
-        return list3
-
-
+        prev.next = list1 if list1 is not None else list2 
+        
+        return prehead.next 
