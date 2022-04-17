@@ -5,15 +5,18 @@
 #         self.next = next
 class Solution:
     def middleNode(self, head):
-        lyst = []
+        dummy_head = head 
+        count = 0
         
-        curr_node = head 
-        while curr_node:
-            lyst.append(curr_node.val)
-            
-            if curr_node.next:
-                curr_node = curr_node.next 
-            else:
-                break 
+        while dummy_head:
+            dummy_head = dummy_head.next
+            count += 1
         
-        return lyst[len(lyst) // 2]
+        start_ind = count // 2
+        ind = 0
+        curr = head 
+        while ind < start_ind:
+            ind += 1
+            curr = curr.next
+        
+        return curr  
