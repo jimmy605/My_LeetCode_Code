@@ -4,5 +4,3 @@ class Solution:
         L = len(text)
         if L < len('balloon'):
             return False 
-        
-        

@@ -2,15 +2,15 @@
 
 class Solution:
     def countBinarySubstrings(self, s: str) -> int:
-        """
-        Take the first index 
-        """
-        
-        count = 0
+        total = 0
         ones = 0
         zeros = 0
         
-        for i in range(len(s)):
+        for element in s:
+            if element == '0':
+                zeros += 1
+            else:
+                ones += 1
             
 
 test = Solution()
